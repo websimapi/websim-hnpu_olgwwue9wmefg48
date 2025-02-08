@@ -1,0 +1,731 @@
+/* Basic resets and typography */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background: #f7f7f7;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  position: relative;
+  text-align: center;
+  padding: 1rem;
+  background: #4a90e2;
+  color: #fff;
+}
+
+/* New Toggle Button for Notable Similar Projects */
+#toggle-similar-projects-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 0.5rem;
+  background: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* Dropdown for Notable Similar Projects */
+#similar-projects-dropdown {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  z-index: 1100;
+}
+
+#similar-projects-dropdown ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#similar-projects-dropdown li {
+  padding: 0.5rem 1rem;
+}
+
+#similar-projects-dropdown li a {
+  color: #333;
+  text-decoration: none;
+}
+
+#similar-projects-dropdown li:hover {
+  background: #f5f5f5;
+}
+
+header h1 {
+  margin-bottom: 0.5rem;
+}
+
+#currency-display {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+/* Main container layout for three columns */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+/* Available Components Panel */
+.available-container {
+  flex: 1 1 300px;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* New Resort Button */
+#resort-btn {
+  display: block;
+  margin: 0.5rem auto 1rem;
+  padding: 0.5rem 1rem;
+  background: #357abd;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+#resort-btn:hover {
+  background: #285a8e;
+}
+
+.available-container section {
+  margin-bottom: 1rem;
+}
+
+.available-container section h2 {
+  border-bottom: 2px solid #4a90e2;
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+/* Main components list grid for available categories */
+#elements-list,
+#biological-list,
+#energy-list,
+#specials-list,
+#essence-list,
+#people-list,
+#places-list,
+#nexus-list,
+#mythical-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 1rem;
+}
+
+/* Component items */
+.component-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  padding: 0.5rem;
+  border-radius: 6px;
+  background: #fafafa;
+  border: 2px solid transparent;
+}
+
+.component-item:hover {
+  transform: scale(1.05);
+  border-color: #4a90e2;
+}
+
+.component-name {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.component-item svg.component-svg {
+  width: 60px;
+  height: 60px;
+  margin: auto;
+  display: block;
+}
+
+/* Crafting Area */
+#crafting-area {
+  flex: 2 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 0.5rem;
+}
+
+#combination-section,
+#result-section {
+  padding: 1rem;
+}
+
+#combination-section h2,
+#result-section h2 {
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+/* Combination container */
+#combination-container {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  min-height: 60px;
+  padding: 0.5rem;
+  border: 2px dashed #ccc;
+  border-radius: 6px;
+  background: #fafafa;
+}
+
+/* Combination item */
+.combination-item {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+/* Remove button for combination */
+.combination-item .remove-btn {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #e74c3c;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  width: 18px;
+  height: 18px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* Combine Button */
+#combine-btn {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  width: 100%;
+  background: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#combine-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+#combine-btn:not(:disabled):hover {
+  background: #357abd;
+}
+
+/* Global Discovery Log */
+#toggle-catalog-btn {
+  margin: 1rem auto;
+  padding: 0.75rem 1.5rem;
+  background: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+#toggle-catalog-btn:hover {
+  background: #357abd;
+  transform: translateY(-1px);
+}
+
+.dynamic-container {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.dynamic-container h3 {
+  margin: 0.5rem;
+  text-align: center;
+  color: #333;
+}
+
+/* Discovery Log Card */
+.result-card {
+  border: 2px solid #4a90e2;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin: 0; 
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%; 
+  display: flex;
+  flex-direction: column;
+}
+
+.result-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.result-card .image-container {
+  width: 100%;
+  aspect-ratio: 1;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.result-card .image-container img,
+.result-card .image-container svg {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.result-card h3 {
+  font-size: 1.25rem;
+  margin: 0 0 0.75rem 0;
+  color: #2c3e50;
+}
+
+.result-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #34495e;
+  margin: 0 0 0.75rem 0;
+}
+
+.recipe-author {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.creature-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.creature-info span {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.creature-rarity {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.creature-currency {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.creature-container {
+  background: #fff3e0;
+  color: #f57c00;
+}
+
+/* Rarity Styles */
+.rarity-common {
+  border-color: #4a90e2;
+}
+
+.rarity-rare {
+  border-color: #e67e22;
+  box-shadow: 0 0 10px rgba(230, 126, 34, 0.8);
+}
+
+.rarity-legendary {
+  border-color: #9b59b6;
+  box-shadow: 0 0 10px rgba(155, 89, 182, 0.8);
+}
+
+.rarity-mythical {
+  border-color: #f1c40f;
+  box-shadow: 0 0 10px rgba(241, 196, 15, 0.8);
+}
+
+/* New tag styling */
+.new-tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: #ffd700;
+  color: #000;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border-radius: 999px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 2;
+}
+
+/* Recipe Store Styles */
+#store-area {
+  flex: 1 1 300px;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 0.5rem;
+}
+
+#store-area h2 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+#toggle-store-btn {
+  display: block;
+  margin: 0.5rem auto 1rem;
+  padding: 0.5rem;
+  background: #357abd;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#toggle-store-btn:hover {
+  background: #285a8e;
+}
+
+.store-card {
+  border: 2px solid #4a90e2;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background: #f9f9f9;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.store-card h3 {
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.store-card p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.store-card .buy-btn {
+  display: block;
+  margin: 0.5rem auto;
+  padding: 0.5rem 1rem;
+  background: #27ae60;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.store-card .buy-btn:hover {
+  background: #1e8449;
+}
+
+.store-card .buy-btn:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255,255,255,.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+.store-card .buy-btn:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}
+
+.store-card svg.component-svg {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 0.5rem auto;
+  display: block;
+}
+
+.store-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.reward-text {
+  color: #27ae60;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.empty-store-message {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-style: italic;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
+
+/* Global Catalog Grid and Modal */
+#global-catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: #f5f7fa;
+}
+
+/* Improve catalog controls styling */
+.catalog-sort-container {
+  background: #fff;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+#catalog-sort {
+  padding: 0.75rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  min-width: 150px;
+  background: #fff;
+}
+
+#apply-sort-btn {
+  padding: 0.75rem 1.5rem;
+  background: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s ease;
+}
+
+#apply-sort-btn:hover {
+  background: #357abd;
+}
+
+/* Loading state */
+.loading-indicator {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #global-catalog {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .catalog-sort-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* Add these new styles for the image generation buttons */
+.action-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.action-btn.success {
+  background: #2ecc71;
+  color: white;
+}
+
+.action-btn.success:hover {
+  background: #27ae60;
+}
+
+.action-btn.warning {
+  background: #e67e22;
+  color: white;
+}
+
+.action-btn.warning:hover {
+  background: #d35400;
+}
+
+.generation-error {
+  color: red;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border: 1px solid red;
+  border-radius: 4px;
+  background: rgba(255,0,0,0.1);
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Add modal styles */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 1rem;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.modal-content svg.component-svg {
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.close-btn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#new-output-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+}
+
+#new-output-overlay .overlay-content {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  max-width: 350px;
+}
+
+#store-search {
+  width: calc(100% - 2rem);
+  margin: 0.5rem 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
